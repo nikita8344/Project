@@ -6,19 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header class="navbar">
     <div class="logo">GoldenTaste</div>
     <nav>
         <ul>
-            <li><a href="#">Меню</a></li>
-            <li><a href="#">Дима гандон</a></li>
-            <li><a href="#">Бронь</a></li>
-            <li><a href="#">Контакты</a></li>
+            <a href="PagesNav/menuPage.html">Menu</a>
+            <a href="aboutPage.html">About Us</a>
+            <a href="PagesNav/bookingPage.html">Reservation</a>
+            <a href="PagesNav/contactPage.html">Контакты</a>
         </ul>
     </nav>
-    <button class="btn-gold">Забронировать</button>
 </header>
 
 <section class="hero">
@@ -26,7 +26,7 @@
     <div class="hero-content">
         <h1>Искусство высокой кухни</h1>
         <p>Погрузитесь в атмосферу изысканных вкусов и элегантного интерьера</p>
-        <button class="btn-outline">Посмотреть меню</button>
+        <button class="btn-outline", data-page="menuPage"> Посмотреть меню</button>
     </div>
 </section>
 
@@ -37,7 +37,7 @@
             GoldenTaste — это сочетание авторской кухни, премиального сервиса
             и утончённой атмосферы. Мы создаём не просто блюда — мы создаём впечатления.
         </p>
-        <button class="btn-gold">Подробнее</button>
+        <button class="btn-gold", data-page="aboutPage">Подробнее</button>
     </div>
 </section>
 
@@ -46,5 +46,15 @@
 </footer>
 
 <script src="script.js"></script>
+
+<script>
+document.querySelectorAll("button").forEach(button => {
+    button.addEventListener("click", function() {
+        const page = this.getAttribute("data-page");
+        window.location.href = page;
+    });
+});
+</script>
+
 </body>
 </html>
